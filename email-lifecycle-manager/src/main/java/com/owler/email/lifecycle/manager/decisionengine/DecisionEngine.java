@@ -11,6 +11,7 @@ import com.owler.email.lifecycle.manager.scalingpolicy.ScalingPolicies;
 
 @Component
 public class DecisionEngine{
+	
 	@Autowired
 	ScalingPolicies scalingPolicies;
 	
@@ -20,7 +21,7 @@ public class DecisionEngine{
 	@Autowired
 	DeploymentRules deploymentRules;
 	
-	public boolean execute(String serviceId, Map metrics){
+	public boolean execute(String serviceId, Map<?, ?> metrics){
 		if(scalingPolicies.getPolicy(serviceId).execute(serviceId, metrics)){		
 			return deploymentEngine.scaleUp(deploymentRules.getDeploymentRules(serviceId), serviceId);	
 		}
