@@ -24,6 +24,7 @@ public class MetricsCollector{
 	@Autowired
  	private RestTemplate restTemplate;
 	
+	@SuppressWarnings("rawtypes")
 	public void start(){
 		while(true){ 
 			eurekaClient.getServices().forEach(service -> {		
