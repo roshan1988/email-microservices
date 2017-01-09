@@ -1,0 +1,12 @@
+Eureka Service : http://localhost:8761/
+
+Config Service : http://localhost:8888/event-checkin-service/default
+
+Event CheckIn : 
+http://10.0.2.36:8070/eventcheckin/checkin
+{
+"companyId":"100486",
+"eventType":"Funding"
+}
+
+Zuul Proxy : http://10.0.2.36:8075/api/eventcheckin/checkin
