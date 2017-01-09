@@ -1,4 +1,4 @@
-package com.brownfied.pss.lcm.scalingpolicy;
+package com.owler.email.lifecycle.manager.scalingpolicy;
 
 import org.springframework.stereotype.Component;
 

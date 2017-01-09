@@ -1,4 +1,4 @@
-package com.brownfied.pss.lcm.deploymentengine;
+package com.owler.email.lifecycle.manager.deploymentengine;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -6,10 +6,10 @@ import java.io.InputStreamReader;
 
 import org.springframework.stereotype.Component;
 
-import com.brownfied.pss.lcm.deploymentrules.DeploymentRule;
 import com.jcraft.jsch.ChannelExec;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.Session;
+import com.owler.email.lifecycle.manager.deploymentrules.DeploymentRule;
 
 @Component
 public class DeploymentEngine{

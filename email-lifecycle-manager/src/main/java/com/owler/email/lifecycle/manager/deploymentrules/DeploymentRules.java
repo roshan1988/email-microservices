@@ -1,4 +1,4 @@
-package com.brownfied.pss.lcm.deploymentrules;
+package com.owler.email.lifecycle.manager.deploymentrules;
 
 import org.springframework.stereotype.Component;
 

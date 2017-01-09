@@ -1,13 +1,13 @@
-package com.brownfied.pss.lcm.decisionengine;
+package com.owler.email.lifecycle.manager.decisionengine;
 
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.brownfied.pss.lcm.deploymentengine.DeploymentEngine;
-import com.brownfied.pss.lcm.deploymentrules.DeploymentRules;
-import com.brownfied.pss.lcm.scalingpolicy.ScalingPolicies;
+import com.owler.email.lifecycle.manager.deploymentengine.DeploymentEngine;
+import com.owler.email.lifecycle.manager.deploymentrules.DeploymentRules;
+import com.owler.email.lifecycle.manager.scalingpolicy.ScalingPolicies;
 
 @Component
 public class DecisionEngine{

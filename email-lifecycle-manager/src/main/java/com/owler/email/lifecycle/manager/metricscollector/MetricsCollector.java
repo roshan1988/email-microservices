@@ -1,4 +1,4 @@
-package com.brownfied.pss.lcm.metricscollector;
+package com.owler.email.lifecycle.manager.metricscollector;
 
 import java.util.Map;
 
@@ -10,10 +10,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
-import com.brownfied.pss.lcm.decisionengine.DecisionEngine;
+import com.owler.email.lifecycle.manager.decisionengine.DecisionEngine;
 
 @Component
 public class MetricsCollector{
+	
 	@Autowired
 	DiscoveryClient eurekaClient;
 	

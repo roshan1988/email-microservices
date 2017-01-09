@@ -1,6 +1,6 @@
-package com.brownfied.pss.lcm.deploymentrules;
+package com.owler.email.lifecycle.manager.deploymentrules;
 
-import com.brownfied.pss.lcm.deploymentengine.DeploymentEngine;
+import com.owler.email.lifecycle.manager.deploymentengine.DeploymentEngine;
 
 public class DummyDeploymentRule implements DeploymentRule {
 	private static final int max_instance=2;
