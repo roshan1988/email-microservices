@@ -9,13 +9,13 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import com.owler.email.lifecycle.manager.metricscollector.MetricsCollector;
 @EnableDiscoveryClient
 @SpringBootApplication
-public class Application implements CommandLineRunner {
+public class EmailLifecycleManager implements CommandLineRunner {
 	
 	@Autowired
 	MetricsCollector metricsCollector;
 	
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(EmailLifecycleManager.class, args);
 	}
 
 	@Override
