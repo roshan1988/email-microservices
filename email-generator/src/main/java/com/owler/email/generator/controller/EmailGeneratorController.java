@@ -60,11 +60,18 @@ public class EmailGeneratorController {
 			return Calendar.getInstance().after(expiry);
 		}
 
-		void increment() {
+		synchronized void increment() {
 			if (isExpired()) {
 				reset();
 			}
 			count.increment();
+		}
+		
+		synchronized int getTPM() {
+			if (isExpired()) {
+				reset();
+			}
+			return count.intValue();
 		}
 
 	}
