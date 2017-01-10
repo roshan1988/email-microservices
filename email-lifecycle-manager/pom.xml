@@ -5,7 +5,7 @@
 
 	<groupId>com.owler.email</groupId>
 	<artifactId>email-lifecycle-manager</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<packaging>jar</packaging>
 
 	<name>email-lifecycle-manager</name>
