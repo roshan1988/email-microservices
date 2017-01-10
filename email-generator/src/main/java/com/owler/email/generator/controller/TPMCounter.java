@@ -1,6 +1,5 @@
 package com.owler.email.generator.controller;
 
-import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.atomic.LongAdder;
 
