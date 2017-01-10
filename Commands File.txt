@@ -10,3 +10,5 @@ http://10.0.2.36:8070/eventcheckin/checkin
 }
 
 Zuul Proxy : http://10.0.2.36:8075/api/eventcheckin/checkin
+
+Hystrix : http://localhost:9999/hystrix/monitor?stream=localhost%3A8060%2Fhystrix.stream
