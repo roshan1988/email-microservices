@@ -3,12 +3,14 @@ package com.owler.email.lifecycle.manager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 import com.owler.email.lifecycle.manager.metricscollector.MetricsCollector;
 @EnableDiscoveryClient
 @SpringBootApplication
+@EnableAutoConfiguration
 public class EmailLifecycleManager implements CommandLineRunner {
 	
 	@Autowired
