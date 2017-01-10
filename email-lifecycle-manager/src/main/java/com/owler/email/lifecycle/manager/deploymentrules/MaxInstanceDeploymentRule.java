@@ -1,21 +1,22 @@
 package com.owler.email.lifecycle.manager.deploymentrules;
 
-import com.owler.email.lifecycle.manager.deploymentengine.DeploymentEngine;
-
 public class MaxInstanceDeploymentRule implements DeploymentRule {
 
-	private int max_instance;
+	private int maxInstance;
+	
+	private int currentInstance;
 
-	public MaxInstanceDeploymentRule(int max_instance) {
+	public MaxInstanceDeploymentRule(int maxInstance, int currentInstance) {
 		super();
-		this.max_instance = max_instance;
+		this.maxInstance = maxInstance;
+		this.currentInstance = currentInstance;
 	}
 
 	public boolean execute() {
-		if (max_instance == 0) {
+		if (maxInstance == 0) {
 			return true;
 		}
-		if (DeploymentEngine.num_instances >= max_instance) {
+		if (currentInstance >= maxInstance) {
 			return false;
 		}
 		return true;

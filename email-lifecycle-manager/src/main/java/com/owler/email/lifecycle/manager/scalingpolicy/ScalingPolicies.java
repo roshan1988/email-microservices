@@ -11,8 +11,15 @@ public class  ScalingPolicies{
 	@Value("${com.owler.email.lifecycle.manager.deploymentrules.tpm.scaleup.threshold}")
 	private String tpmToScaleUp;
 	
-	public ScalingPolicy getPolicy(String serviceId){
-		return new TpmScalingPolicy(Integer.parseInt(tpmToScaleUp));
+	@Value("${com.owler.email.lifecycle.manager.deploymentrules.tpm.scaledown.threshold}")
+	private String tpmToScaleDown;
+	
+	public ScalingPolicy getScaleUpPolicy(String serviceId){
+		return new TpmScaleUpPolicy(Integer.parseInt(tpmToScaleUp));
+	}
+	
+	public ScalingPolicy getScaleDownPolicy(String serviceId){
+		return new TpmScaleDownPolicy(Integer.parseInt(tpmToScaleDown));
 	}
 	
 }

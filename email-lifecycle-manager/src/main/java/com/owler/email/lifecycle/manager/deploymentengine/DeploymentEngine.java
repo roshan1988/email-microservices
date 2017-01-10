@@ -13,13 +13,11 @@ import com.owler.email.lifecycle.manager.deploymentrules.DeploymentRule;
 
 @Component
 public class DeploymentEngine{
-	public static int num_instances = 0;
-	
+		
 	public boolean scaleUp(DeploymentRule rule, String serviceId){
 		if(! rule.execute()) {
 			return false;
 		}
-		num_instances++;
 		Runnable runnable = () -> {
 			System.out.println("Kicking off a new instance "+ serviceId);	
 		    executeSSH();
@@ -71,8 +69,8 @@ public class DeploymentEngine{
 		return true;
 	}
 	
-	boolean scaleDown(){
-		//NOT IMPLEMENTED. THIS WILL USE SPRING BOOT ACTUATOR
+	public boolean scaleDown(DeploymentRule rule, String serviceId){
+		System.out.println("Scaling down instance");
 		return true;
 	}
 

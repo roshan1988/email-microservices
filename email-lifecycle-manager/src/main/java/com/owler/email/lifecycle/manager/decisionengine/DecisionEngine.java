@@ -22,8 +22,11 @@ public class DecisionEngine{
 	DeploymentRules deploymentRules;
 	
 	public boolean execute(String serviceId, Map<?, ?> metrics){
-		if(scalingPolicies.getPolicy(serviceId).execute(serviceId, metrics)){		
-			return deploymentEngine.scaleUp(deploymentRules.getDeploymentRules(serviceId), serviceId);	
+		if(scalingPolicies.getScaleUpPolicy(serviceId).execute(serviceId, metrics)){		
+			return deploymentEngine.scaleUp(deploymentRules.getScaleUpDeploymentRules(serviceId), serviceId);	
+		}
+		else if(scalingPolicies.getScaleDownPolicy(serviceId).execute(serviceId, metrics)){		
+			return deploymentEngine.scaleDown(deploymentRules.getScaleDownDeploymentRules(serviceId), serviceId);	
 		}
 		return false;
 	}

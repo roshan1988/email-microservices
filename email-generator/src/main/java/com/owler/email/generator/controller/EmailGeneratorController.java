@@ -1,8 +1,6 @@
 package com.owler.email.generator.controller;
 
-import java.util.Calendar;
 import java.util.List;
-import java.util.concurrent.atomic.LongAdder;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.metrics.GaugeService;
@@ -38,42 +36,8 @@ public class EmailGeneratorController {
 		List<EmailEntity> emailList = generatorComponent.generateEmail(checkInRecord);
 		transmitterComponent.sendEmailToTransmitter(emailList);
 		tpm.increment();
-		gaugeService.submit("tpm", tpm.count.intValue());
+		gaugeService.submit("tpm", tpm.getTPM());
 		return emailList.size();
-	}
-
-	class TPMCounter {
-		LongAdder count;
-		Calendar expiry = null;
-
-		TPMCounter() {
-			reset();
-		}
-
-		void reset() {
-			count = new LongAdder();
-			expiry = Calendar.getInstance();
-			expiry.add(Calendar.MINUTE, 1);
-		}
-
-		boolean isExpired() {
-			return Calendar.getInstance().after(expiry);
-		}
-
-		synchronized void increment() {
-			if (isExpired()) {
-				reset();
-			}
-			count.increment();
-		}
-		
-		synchronized int getTPM() {
-			if (isExpired()) {
-				reset();
-			}
-			return count.intValue();
-		}
-
 	}
 
 }

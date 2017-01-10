@@ -2,21 +2,21 @@ package com.owler.email.lifecycle.manager.scalingpolicy;
 
 import java.util.Map;
 
-public class TpmScalingPolicy implements ScalingPolicy {
+public class TpmScaleDownPolicy implements ScalingPolicy {
 	
 	public static final String TPM_METRIC_KEY = "gauge.servo.tpm";
 	
-	int tpmScaleUpThreshold;
+	int tpmScaleDownThreshold;
 	
-	public TpmScalingPolicy(int tpmScaleUpThreshold) {
+	public TpmScaleDownPolicy(int tpmScaleDownThreshold) {
 		super();
-		this.tpmScaleUpThreshold = tpmScaleUpThreshold;
+		this.tpmScaleDownThreshold = tpmScaleDownThreshold;
 	}
 
 	public boolean execute(String serviceId, Map<?, ?> metrics){
 		if(metrics.containsKey(TPM_METRIC_KEY)){
 			Double tpm = (Double) metrics.get(TPM_METRIC_KEY);
-			return (tpm > tpmScaleUpThreshold);
+			return (tpm < tpmScaleDownThreshold);
 		}
 		return false;
 	}

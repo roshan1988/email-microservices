@@ -27,10 +27,15 @@ public class MetricsCollector{
 	@SuppressWarnings("rawtypes")
 	public void start(){
 		while(true){ 
-			eurekaClient.getServices().forEach(service -> {		
+			eurekaClient.getServices().forEach(service -> {	
 				Map metrics = restTemplate.getForObject("http://"+service+"/metrics",Map.class);
 				decisionEngine.execute(service, metrics);
 			});	
+			try {
+				Thread.sleep(30000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}		
 	}
 }
