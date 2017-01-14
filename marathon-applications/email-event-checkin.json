@@ -1,5 +1,5 @@
 {
-  "id": "email-config-server-1.0",
+  "id": "email-event-checkin-1.0",
   "cmd": null,
   "cpus": 1.5,
   "mem": 512,
@@ -10,11 +10,12 @@
   "container": {
     "type": "DOCKER",
     "docker": {
-      "image": "roshan1988/email-config-server:1.0",
+      "image": "roshan1988/email-event-checkin:1.0",
       "network": "BRIDGE",
+      "forcePullImage": true,
       "portMappings": [
         {
-          "containerPort": 8888,
+          "containerPort": 8070,
           "hostPort": 0
         }
       ],

@@ -41,6 +41,10 @@ killProcessForPort 5050
 killProcessForPort 8080
 killProcessForName mesos-agent
 killProcessForPort 2181
+killProcessForPort 8888
+killProcessForPort 8761
+
+docker rm $(docker ps -a -q)
 
 rm /Users/roshan/Work/Ems_Env_Logs/*
 rm -rf /Users/roshan/Work/zkDataDir

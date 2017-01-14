@@ -12,14 +12,14 @@ set -e
 cd email-configserver								
 note "Building email-config-server..." 
 mvn clean install
-docker build -t roshan1988/email-config-server:1.0 .
-docker push roshan1988/email-config-server:1.0
+# docker build -t roshan1988/email-config-server:1.0 .
+# docker push roshan1988/email-config-server:1.0
 cd -
 cd email-eurekaserver								
 note "Building email-eureka-server..." 
 mvn clean install
-docker build -t roshan1988/email-eureka-server:1.0 .
-docker push roshan1988/email-eureka-server
+# docker build -t roshan1988/email-eureka-server:1.0 .
+# docker push roshan1988/email-eureka-server
 cd -
 cd email-event-checkin								
 note "Building email-event-checkin..." 

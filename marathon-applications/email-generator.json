@@ -1,0 +1,35 @@
+{
+  "id": "email-generator-1.0",
+  "cmd": null,
+  "cpus": 1.5,
+  "mem": 512,
+  "disk": 0,
+  "instances": 1,
+  "requirePorts": false,
+  "executor": "",
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "roshan1988/email-generator:1.0",
+      "network": "BRIDGE",
+      "forcePullImage": true,
+      "portMappings": [
+        {
+          "containerPort": 8060,
+          "hostPort": 0
+        }
+      ],
+      "privileged": true,
+      "parameters": [
+        {
+          "key": "add-host",
+          "value": "moby:127.0.0.1"
+        }
+      ]
+    },
+    "volumes": []
+  },
+  "labels": {
+    "environment": "staging"
+  }
+}
