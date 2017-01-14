@@ -16,3 +16,20 @@ Hystrix : http://localhost:9999/hystrix/monitor?stream=localhost%3A8060%2Fhystri
 http://localhost:5601/app/kibana : Kibana
 
 echo Boom! | nc 10.0.2.2 4560 : Test logstash from Docker
+
+ps -ef | grep zookeeper : Get running zookeeper instance
+
+/usr/local/sbin/ ./mesos-master  --registry=in_memory --zk=zk://localhost:2181/mesos --quorum=1 : Start mesos
+
+http://localhost:5050/#/ : Mesos UI
+
+./mesos-agent --containerizers=mesos,docker --work_dir=/Users/roshan/Work/mesos_slave_work_dir --master=zk://localhost:2181/mesos : Mesos Slave
+
+/Users/roshan/marathon-1.3.5/bin/
+./start --master zk://localhost:2181/mesos --zk zk://localhost:2181/marathon : Start Marathon
+
+http://localhost:8080/ui/#/apps : Marathon UI
+
+http://0.0.0.0:31369/email-generator-service/default : Success access via marathon deployment
+
+lsof -n -i4TCP:8080 | grep LISTEN : Get process listening to ports
