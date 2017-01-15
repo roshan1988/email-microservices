@@ -40,6 +40,7 @@ function killProcessForPort() {
 killProcessForPort 5050
 killProcessForPort 8080
 killProcessForName mesos-agent
+killProcessForPort 5051
 killProcessForPort 2181
 killProcessForPort 8888
 killProcessForPort 8761

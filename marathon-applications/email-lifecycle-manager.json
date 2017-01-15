@@ -1,7 +1,7 @@
 {
   "id": "email-lifecycle-manager-1.0",
   "cmd": null,
-  "cpus": 1.5,
+  "cpus": 1,
   "mem": 512,
   "disk": 0,
   "instances": 1,
@@ -15,7 +15,7 @@
       "forcePullImage": true,
       "portMappings": [
         {
-          "containerPort": 9876,
+          "containerPort": 9090,
           "hostPort": 0
         }
       ],
