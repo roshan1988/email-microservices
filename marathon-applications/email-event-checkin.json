@@ -10,7 +10,7 @@
   "container": {
     "type": "DOCKER",
     "docker": {
-      "image": "roshan1988/email-event-checkin:1.0",
+      "image": "localhost:5000/email-event-checkin:1.0",
       "network": "BRIDGE",
       "forcePullImage": true,
       "portMappings": [

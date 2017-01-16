@@ -12,42 +12,34 @@ set -e
 cd email-configserver								
 note "Building email-config-server..." 
 mvn clean install
-# docker build -t roshan1988/email-config-server:1.0 .
-# docker push roshan1988/email-config-server:1.0
+docker build -t localhost:5000/email-config-server:1.0 .
 cd -
 cd email-eurekaserver								
 note "Building email-eureka-server..." 
 mvn clean install
-# docker build -t roshan1988/email-eureka-server:1.0 .
-# docker push roshan1988/email-eureka-server
+docker build -t localhost:5000/email-eureka-server:1.0 .
 cd -
 cd email-event-checkin								
 note "Building email-event-checkin..." 
 mvn clean install
-docker build -t roshan1988/email-event-checkin:1.0 .
-docker push roshan1988/email-event-checkin
+docker build -t localhost:5000/email-event-checkin:1.0 .
 cd -
 cd email-event-checkin-apigateway	
 note "Building email-event-checkin-apigateway..." 
 mvn clean install
-docker build -t roshan1988/email-event-checkin-apigateway:1.0 .
-docker push roshan1988/email-event-checkin-apigateway
+docker build -t localhost:5000/email-event-checkin-apigateway:1.0 .
 cd -
 cd email-generator									
 note "Building email-generator...";
 mvn clean install
-docker build -t roshan1988/email-generator:1.0 .
-docker push roshan1988/email-generator
+docker build -t localhost:5000/email-generator:1.0 .
 cd -
 cd email-transmitter								
 note "Building email-transmitter..."
 mvn clean install
-docker build -t roshan1988/email-transmitter:1.0 .
-docker push roshan1988/email-transmitter
+docker build -t localhost:5000/email-transmitter:1.0 .
 cd -
 cd email-lifecycle-manager							
 note "Building email-lifecycle-manager..."
 mvn clean install
-docker build -t roshan1988/email-lifecycle-manager:1.0 .
-docker push roshan1988/email-lifecycle-manager
 cd -

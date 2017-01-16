@@ -45,7 +45,17 @@ killProcessForPort 2181
 killProcessForPort 8888
 killProcessForPort 8761
 
+docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
+docker run -d -p 5000:5000 --name localregistry registry
+
+docker push localhost:5000/email-config-server:1.0
+docker push localhost:5000/email-eureka-server
+docker push localhost:5000/email-event-checkin
+docker push localhost:5000/email-event-checkin-apigateway
+docker push localhost:5000/email-generator
+docker push localhost:5000/email-transmitter
+
 
 rm /Users/roshan/Work/Ems_Env_Logs/*
 rm -rf /Users/roshan/Work/zkDataDir
