@@ -1,8 +1,8 @@
 {
   "id": "email-generator-1.0",
   "cmd": null,
-  "cpus": 1,
-  "mem": 512,
+  "cpus": 0.2,
+  "mem": 256,
   "disk": 0,
   "instances": 1,
   "requirePorts": false,
@@ -10,7 +10,7 @@
   "container": {
     "type": "DOCKER",
     "docker": {
-      "image": "localhost:5000/email-generator:1.0",
+      "image": "roshan1988/email-generator",
       "network": "BRIDGE",
       "forcePullImage": true,
       "portMappings": [

@@ -33,3 +33,13 @@ http://localhost:8080/ui/#/apps : Marathon UI
 http://0.0.0.0:31369/email-generator-service/default : Success access via marathon deployment
 
 lsof -n -i4TCP:8080 | grep LISTEN : Get process listening to ports
+
+https://github.com/datastrophic/mesos-docker-containers
+Mesos setup on container
+
+docker-machine create -d virtualbox --virtualbox-memory 4500 --virtualbox-cpu-count 2 --engine-opt dns=8.8.8.8 micro services
+
+ssh -p 8601 -i /home/bala/Key/OwlerQE.pem  qeuser@52.1.75.146
+Q3uSer0^^l@405
+ssh -p 8601 -i /home/bala/Key/OwlerQE.pem  ec2-user@10.0.0.191
+public ip: 34.195.122.238
