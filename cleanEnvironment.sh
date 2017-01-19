@@ -17,14 +17,13 @@ function killProcessForPort() {
 }
 
 
-killProcessForPort 5050
-killProcessForPort 8080
-killProcessForName mesos-agent
-killProcessForPort 5051
-killProcessForPort 2181
-killProcessForPort 8888
-killProcessForPort 8761
+killProcessForPort 5601
+killProcessForPort 9600
+killProcessForPort 9300
 
-docker stop $(docker ps -a -q)
-docker rm $(docker ps -a -q)
+# killProcessForName mesos-agent
+# killProcessForPort 5051
+# killProcessForPort 2181
+# killProcessForPort 8888
+# killProcessForPort 8761
 
