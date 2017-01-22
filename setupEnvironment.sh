@@ -21,7 +21,7 @@ function printPIDForPort() {
 rm /Users/roshan/Work/Ems_Env_Logs/*
 
 export PATH="$PATH:/usr/local/Cellar/logstash/5.1.1/bin/"
-./logstash -f logstash.conf > /Users/roshan/Work/Ems_Env_Logs/logtsashLog 2>&1 &
+logstash -f logstash.conf > /Users/roshan/Work/Ems_Env_Logs/logtsashLog 2>&1 &
 watchString '/Users/roshan/Work/Ems_Env_Logs/logtsashLog' 'Successfully started Logstash'
 echo 'Successfully started Logstash'
 

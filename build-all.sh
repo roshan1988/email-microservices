@@ -16,30 +16,27 @@ cd -
 cd email-eurekaserver								
 note "Building email-eureka-server..." 
 mvn clean install
+docker build -t roshan1988/email-eureka .
 cd -
 cd email-event-checkin								
 note "Building email-event-checkin..." 
 mvn clean install
 docker build -t roshan1988/email-event-checkin .
-docker push roshan1988/email-event-checkin
 cd -
 cd email-event-checkin-apigateway	
 note "Building email-event-checkin-apigateway..." 
 mvn clean install
 docker build -t roshan1988/email-event-checkin-apigateway .
-docker push roshan1988/email-event-checkin-apigateway
 cd -
 cd email-generator									
 note "Building email-generator...";
 mvn clean install
 docker build -t roshan1988/email-generator .
-docker push roshan1988/email-generator
 cd -
 cd email-transmitter								
 note "Building email-transmitter..."
 mvn clean install
 docker build -t roshan1988/email-transmitter .
-docker push roshan1988/email-transmitter
 cd -
 cd email-lifecycle-manager							
 note "Building email-lifecycle-manager..."

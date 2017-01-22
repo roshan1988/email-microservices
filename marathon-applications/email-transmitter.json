@@ -1,5 +1,5 @@
 {
-  "id": "email-transmitter-1.0",
+  "id": "email-transmitter-service",
   "cmd": null,
   "cpus": 0.2,
   "mem": 256,
@@ -13,19 +13,23 @@
       "image": "roshan1988/email-transmitter",
       "network": "BRIDGE",
       "forcePullImage": true,
+       "parameters":[
+        {
+            "key": "hostname",
+            "value": "email-transmitter-service-1"
+        },
+        {
+            "key": "net",
+            "value": "microservicesnet"
+        }
+      ],
       "portMappings": [
         {
           "containerPort": 8090,
           "hostPort": 0
         }
       ],
-      "privileged": true,
-      "parameters": [
-        {
-          "key": "add-host",
-          "value": "moby:127.0.0.1"
-        }
-      ]
+      "privileged": true
     },
     "volumes": []
   },
