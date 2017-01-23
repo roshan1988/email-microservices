@@ -1,4 +1,4 @@
-#./build-all.sh
+./build-all.sh
 #./pushDockerImages.sh
 ./setupEnvironment.sh
 ./start-config.sh

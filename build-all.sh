@@ -41,4 +41,5 @@ cd -
 cd email-lifecycle-manager							
 note "Building email-lifecycle-manager..."
 mvn clean install
+docker build -t roshan1988/email-lifecycle-manager .
 cd -
