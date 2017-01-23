@@ -71,12 +71,6 @@
 			<version>4.6</version>
 		</dependency>
 
-		<dependency>
-			<groupId>com.github.mohitsoni</groupId>
-			<artifactId>marathon-client</artifactId>
-			<version>0.4.2</version>
-		</dependency>
-
 	</dependencies>
 
 	<dependencyManagement>
