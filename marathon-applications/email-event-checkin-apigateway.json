@@ -15,10 +15,6 @@
       "forcePullImage": true,
        "parameters":[
         {
-            "key": "hostname",
-            "value": "email-event-checkin-apigateway-1"
-        },
-        {
             "key": "net",
             "value": "microservicesnet"
         }

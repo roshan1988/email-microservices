@@ -42,7 +42,7 @@ public class DeploymentEngine {
 		try {
 			HttpHeaders headers = new HttpHeaders();
 			headers.setContentType(MediaType.APPLICATION_JSON);
-			HttpEntity<String> entity = new HttpEntity<String>("{ \"instances\" : \""+ instanceCount +"\" }", headers);
+			HttpEntity<String> entity = new HttpEntity<String>("{ \"instances\" : "+ instanceCount +" }", headers);
 			RestTemplate restTemplate = new RestTemplate();
 			ResponseEntity<String> postResponse = restTemplate.exchange(marathonEndpoint + "v2/apps/" + serviceId, HttpMethod.PUT,
 					entity, String.class);
