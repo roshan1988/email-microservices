@@ -19,7 +19,6 @@ import org.springframework.web.client.RestTemplate;
 
 import com.owler.email.lifecycle.manager.deploymentrules.DeploymentRule;
 
-
 @Component
 public class DeploymentEngine {
 
@@ -42,10 +41,10 @@ public class DeploymentEngine {
 		try {
 			HttpHeaders headers = new HttpHeaders();
 			headers.setContentType(MediaType.APPLICATION_JSON);
-			HttpEntity<String> entity = new HttpEntity<String>("{ \"instances\" : "+ instanceCount +" }", headers);
+			HttpEntity<String> entity = new HttpEntity<String>("{ \"instances\" : " + instanceCount + " }", headers);
 			RestTemplate restTemplate = new RestTemplate();
-			ResponseEntity<String> postResponse = restTemplate.exchange(marathonEndpoint + "v2/apps/" + serviceId, HttpMethod.PUT,
-					entity, String.class);
+			ResponseEntity<String> postResponse = restTemplate.exchange(marathonEndpoint + "v2/apps/" + serviceId,
+					HttpMethod.PUT, entity, String.class);
 			if (postResponse.getStatusCode() != HttpStatus.OK) {
 				logger.error(
 						"Error upscaling the instance : " + serviceId + "Error Code : " + postResponse.getStatusCode());
@@ -67,7 +66,7 @@ public class DeploymentEngine {
 		try {
 			HttpHeaders headers = new HttpHeaders();
 			headers.setContentType(MediaType.APPLICATION_JSON);
-			HttpEntity<String> entity = new HttpEntity<String>("{ instances : "+ instanceCount +" }", headers);
+			HttpEntity<String> entity = new HttpEntity<String>("{ \"instances\" : " + instanceCount + " }", headers);
 			RestTemplate restTemplate = new RestTemplate();
 			ResponseEntity<String> postResponse = restTemplate.exchange(marathonEndpoint + "v2/apps/" + serviceId,
 					HttpMethod.PUT, entity, String.class);
