@@ -43,3 +43,17 @@ ssh -p 8601 -i /home/bala/Key/OwlerQE.pem  qeuser@52.1.75.146
 Q3uSer0^^l@405
 ssh -p 8601 -i /home/bala/Key/OwlerQE.pem  ec2-user@10.0.0.191
 public ip: 34.195.122.238
+
+
+vi ~/.bash_profile
+export DOCKER_TLS_VERIFY="1"
+export DOCKER_HOST="tcp://192.168.99.100:2376"
+export DOCKER_CERT_PATH="/Users/roshan/.docker/machine/machines/microservices"
+export DOCKER_MACHINE_NAME="microservices"
+
+sudo vi /etc/hosts
+192.168.99.100 mesos-master mesos-slave zookeeper marathon chronos
+
+docker-machine create -d virtualbox --virtualbox-memory 4500 --virtualbox-cpu-count 4 --engine-opt dns=8.8.8.8 microservices
+
+docker network create microservicesnet
