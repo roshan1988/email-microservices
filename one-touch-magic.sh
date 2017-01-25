@@ -1,5 +1,5 @@
 ./build-all.sh
-#./pushDockerImages.sh
+./pushDockerImages.sh
 ./setupEnvironment.sh
 ./start-config.sh
 ./start-eureka.sh

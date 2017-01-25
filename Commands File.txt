@@ -37,7 +37,7 @@ lsof -n -i4TCP:8080 | grep LISTEN : Get process listening to ports
 https://github.com/datastrophic/mesos-docker-containers
 Mesos setup on container
 
-docker-machine create -d virtualbox --virtualbox-memory 4500 --virtualbox-cpu-count 2 --engine-opt dns=8.8.8.8 micro services
+docker-machine create -d virtualbox --virtualbox-memory 3500 --virtualbox-cpu-count 2 --engine-opt dns=8.8.8.8 microservices
 
 ssh -p 8601 -i /home/bala/Key/OwlerQE.pem  qeuser@52.1.75.146
 Q3uSer0^^l@405
