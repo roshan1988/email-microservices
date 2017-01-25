@@ -2,10 +2,10 @@
   "id": "email-generator-service",
   "cmd": null,
   "cpus": 0.2,
-  "mem": 256,
+  "mem": 512,
   "disk": 0,
   "instances": 1,
-  "requirePorts": false,
+  "requirePorts": true,
   "executor": "",
   "container": {
     "type": "DOCKER",
@@ -14,10 +14,6 @@
       "network": "BRIDGE",
       "forcePullImage": true,
       "parameters":[
-        {
-            "key": "hostname",
-            "value": "email-generator-service-1"
-        },
         {
             "key": "net",
             "value": "microservicesnet"
@@ -29,7 +25,7 @@
           "hostPort": 0
         }
       ],
-      "privileged": true
+      "privileged": false
     },
     "volumes": []
   },
