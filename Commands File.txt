@@ -57,3 +57,5 @@ sudo vi /etc/hosts
 docker-machine create -d virtualbox --virtualbox-memory 4500 --virtualbox-cpu-count 4 --engine-opt dns=8.8.8.8 microservices
 
 docker network create microservicesnet
+
+java jar fakeSMTP-2.0.jar -m

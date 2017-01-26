@@ -24,6 +24,7 @@ public class TransmitterComponent {
 		SimpleMailMessage message = new SimpleMailMessage();
 		message.setText(emailEntity.getContent());
 		message.setTo(emailEntity.getToAddress());
+		message.setSubject(emailEntity.getSubject() + " Id : " + emailEntity.getId());
 		message.setFrom("owlerinsightl@owler.com");
 		try {
 			mailSender.send(message);
