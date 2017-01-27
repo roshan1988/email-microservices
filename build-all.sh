@@ -43,3 +43,8 @@ note "Building email-lifecycle-manager..."
 mvn clean install
 docker build -t roshan1988/email-lifecycle-manager .
 cd -
+cd email-hystrix-dashboard							
+note "Building email-hystrix-dashboard..."
+mvn clean install
+docker build -t roshan1988/email-hystrix-dashboard .
+cd -

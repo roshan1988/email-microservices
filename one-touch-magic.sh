@@ -4,6 +4,7 @@
 ./start-config.sh
 ./start-eureka.sh
 ./start-lifecycle-manager.sh
+./start-hystrix-dashboard.sh
 ./deploy-marathon-services.sh
 
 
