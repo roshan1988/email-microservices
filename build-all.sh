@@ -48,3 +48,8 @@ note "Building email-hystrix-dashboard..."
 mvn clean install
 docker build -t roshan1988/email-hystrix-dashboard .
 cd -
+cd email-services-admin							
+note "Building email-services-admin..."
+mvn clean install
+docker build -t roshan1988/email-services-admin .
+cd -

@@ -58,4 +58,31 @@ docker-machine create -d virtualbox --virtualbox-memory 4500 --virtualbox-cpu-co
 
 docker network create microservicesnet
 
-java jar fakeSMTP-2.0.jar -m
+java -jar fakeSMTP-2.0.jar -m 
+Port : 9900
+
+
+
+
+Chronos Command :
+http://chronos:4400/scheduler/iso8601
+{
+  "schedule": "R/2017-09-25T17:22:00Z/PT2M",
+  "name": "dockerjob",
+  "container": {
+    "type": "DOCKER",
+    "image": "libmesos/ubuntu",
+    "network": "BRIDGE",
+    "volumes": [
+      {
+        "containerPath": "/var/log/",
+        "hostPath": "/logs/",
+        "mode": "RW"
+      }
+    ]
+  },
+  "cpus": "0.2",
+  "mem": "512",
+  "fetch": [],
+  "command": "while sleep 10; do date =u %T; done"
+}
