@@ -9,7 +9,7 @@ done
 }
 
 cd email-lifecycle-manager/target
-docker run --name lifecycle --net microservicesnet roshan1988/email-lifecycle-manager > /Users/roshan/Work/Ems_Env_Logs/lifecycleManagerLog 2>&1 &
+docker run --name lifecycle -m 500M --net microservicesnet roshan1988/email-lifecycle-manager > /Users/roshan/Work/Ems_Env_Logs/lifecycleManagerLog 2>&1 &
 
 #watchString '/Users/roshan/Work/Ems_Env_Logs/lifecycleManagerLog' 'Started ConfigServer in'
 echo 'Email Lifecycle Manager Started'

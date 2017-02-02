@@ -27,7 +27,9 @@ public class TransmitterComponent {
 		message.setSubject(emailEntity.getSubject() + " Id : " + emailEntity.getId());
 		message.setFrom("owlerinsightl@owler.com");
 		try {
+			logger.info("Sending email for Job Id : " + emailEntity.getId());
 			mailSender.send(message);
+			logger.info("Successfully send email for Job Id : " + emailEntity.getId());
 		} catch (Exception e) {
 			logger.error("Error sending mail with id : " + emailEntity.getId(), e);
 		}

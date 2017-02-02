@@ -2,7 +2,7 @@
   "id": "email-generator-service",
   "cmd": null,
   "cpus": 0.2,
-  "mem": 512,
+  "mem": 512.0,
   "disk": 0,
   "instances": 1,
   "requirePorts": true,
@@ -11,6 +11,7 @@
     "type": "DOCKER",
     "docker": {
       "image": "roshan1988/email-generator",
+      "forcePullImage": true,
       "network": "BRIDGE",
       "forcePullImage": true,
       "parameters":[

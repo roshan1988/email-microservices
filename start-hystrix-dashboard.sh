@@ -8,7 +8,7 @@ do
 done
 }
 
-docker run --name hystrix --net microservicesnet -p 9999:9999 roshan1988/email-hystrix-dashboard > /Users/roshan/Work/Ems_Env_Logs/hystrixDashboardLog 2>&1 &
+docker run --name hystrix -m 500M --net microservicesnet -p 9999:9999 roshan1988/email-hystrix-dashboard > /Users/roshan/Work/Ems_Env_Logs/hystrixDashboardLog 2>&1 &
 
 #watchString '/Users/roshan/Work/Ems_Env_Logs/lifecycleManagerLog' 'Started ConfigServer in'
 echo 'Email Hystrix Dashboard Started'
