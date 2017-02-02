@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.metrics.GaugeService;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -32,6 +34,8 @@ public class EmailGeneratorController {
 	GaugeService gaugeService;
 
 	TPMCounter tpm = new TPMCounter();
+	
+	private static final Logger logger = LoggerFactory.getLogger(EmailGeneratorController.class);
 
 	@PostConstruct
 	public void tpmRegister() {
@@ -52,7 +56,10 @@ public class EmailGeneratorController {
 
 	@RequestMapping(value = "/generate", method = RequestMethod.POST)
 	long generateAndSendEmail(@RequestBody CheckInRecord checkInRecord) {
+		logger.info("Generating email for id : " + checkInRecord.getId());
 		List<EmailEntity> emailList = generatorComponent.generateEmail(checkInRecord);
+		logger.info("Successfully generated email for id : " + checkInRecord.getId());
+		logger.info("Sending email for transmission. Job id : " + checkInRecord.getId());
 		transmitterComponent.sendEmailToTransmitter(emailList);
 		tpm.increment();
 		return emailList.size();

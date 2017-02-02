@@ -26,9 +26,9 @@ public class CheckinComponent {
 
 	public long checkIn(CheckInRecord checkIn) {
 		checkIn.setCheckInTime(new Date());
-		logger.info("Saving checkin event");
+		logger.info("Saving checkin event for company : " + checkIn.getCompanyId() + " for Event : " + checkIn.getEventType());
 		long id = checkinRepository.save(checkIn).getId();
-		logger.info("Successfully saved event checkin ");
+		logger.info("Successfully saved event checkin for id : " + id);
 		logger.info("Sending checkin event id for email generation : "+ id);
 		generatorServiceProxy.generateEmailForEvent(checkIn);
 		return id;

@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.owler.email.generator.entity.EmailEntity;
 
+/**
+ * @author Roshan Alexander
+ *
+ */
 @FeignClient(name="email-transmitter-service")
 public interface EmailTransmitterServiceProxy {
 	

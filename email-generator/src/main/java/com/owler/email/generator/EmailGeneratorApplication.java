@@ -6,6 +6,10 @@ import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
+/**
+ * @author Roshan Alexander
+ *
+ */
 @EnableDiscoveryClient 
 @SpringBootApplication
 @EnableCircuitBreaker
