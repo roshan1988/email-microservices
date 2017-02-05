@@ -22,7 +22,7 @@ killProcessForPort 9600
 killProcessForPort 9300
 killProcessForPort 8761
 killProcessForPort 8888
-
+killProcessForPort 9411
 # killProcessForName mesos-agent
 # killProcessForPort 5051
 # killProcessForPort 2181
