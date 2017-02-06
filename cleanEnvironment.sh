@@ -16,7 +16,9 @@ function killProcessForPort() {
     fi
 }
 
-
+docker stop $(docker ps -a -q)
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
 killProcessForPort 5601
 killProcessForPort 9600
 killProcessForPort 9300

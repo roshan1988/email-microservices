@@ -33,3 +33,9 @@ kibana > /Users/roshan/Work/Ems_Env_Logs/kibanaLog 2>&1 &
 watchString '/Users/roshan/Work/Ems_Env_Logs/kibanaLog' 'green - Ready'
 echo 'Successfully started Kibana'
 
+cd mesos-docker-containers
+docker-compose up > /Users/roshan/Work/Ems_Env_Logs/mesosStackLog 2>&1 &
+echo 'Successfully started Mesos Master, Mesos Slave, Marathon and Chronos'
+cd -
+
+
