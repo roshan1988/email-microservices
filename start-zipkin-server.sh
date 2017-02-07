@@ -11,7 +11,7 @@ done
 cd zipkin-server
  java -jar zipkin-server-1.20.0-exec.jar > /Users/roshan/Work/Ems_Env_Logs/zipkinServerLog 2>&1 &
 
-#watchString '/Users/roshan/Work/Ems_Env_Logs/lifecycleManagerLog' 'Started ConfigServer in'
+watchString '/Users/roshan/Work/Ems_Env_Logs/zipkinServerLog' 'Started ZipkinServer in'
 echo 'Zipkin Server Started'
 
 cd ../..
