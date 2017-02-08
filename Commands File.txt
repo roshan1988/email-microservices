@@ -61,7 +61,7 @@ docker network create microservicesnet
 java -jar fakeSMTP-2.0.jar -m 
 Port : 9900
 
-
+-Djava.security.egd=file:/dev/urandom
 
 
 Chronos Command :
