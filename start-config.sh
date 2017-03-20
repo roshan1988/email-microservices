@@ -8,11 +8,13 @@ do
 done
 }
 
-cd email-configserver/target
-java -jar email-config-server-1.0.jar > /Users/roshan/Work/Ems_Env_Logs/configserverLog 2>&1 &
+function dockip() {   
+docker inspect --format '{{ .NetworkSettings.IPAddress }}' "$@"; 
+}
+
+docker run --net=bridge -p 8888:8888 --name=configServer localhost:5000/email-config-server:1.0 > /Users/roshan/Work/Ems_Env_Logs/configserverLog 2>&1 &
 watchString '/Users/roshan/Work/Ems_Env_Logs/configserverLog' 'Started ConfigServer in'
 echo 'Email Config Server Started'
-
-cd ../..
-
-
+configIpLocal=$(dockip configServer)
+echo Email Config Server Ip
+echo $configIpLocal
