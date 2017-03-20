@@ -1,31 +1,32 @@
 {
-  "id": "email-transmitter-1.0",
+  "id": "email-transmitter-service",
   "cmd": null,
-  "cpus": 1,
-  "mem": 512,
+  "cpus": 0.2,
+  "mem": 512.0,
   "disk": 0,
   "instances": 1,
-  "requirePorts": false,
+  "requirePorts": true,
   "executor": "",
   "container": {
     "type": "DOCKER",
     "docker": {
-      "image": "localhost:5000/email-transmitter:1.0",
+      "image": "roshan1988/email-transmitter",
+      "forcePullImage": true,
       "network": "BRIDGE",
       "forcePullImage": true,
+       "parameters":[
+        {
+            "key": "net",
+            "value": "microservicesnet"
+        }
+      ],
       "portMappings": [
         {
           "containerPort": 8090,
           "hostPort": 0
         }
       ],
-      "privileged": true,
-      "parameters": [
-        {
-          "key": "add-host",
-          "value": "moby:127.0.0.1"
-        }
-      ]
+      "privileged": false
     },
     "volumes": []
   },

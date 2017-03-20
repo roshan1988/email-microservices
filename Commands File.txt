@@ -33,3 +33,56 @@ http://localhost:8080/ui/#/apps : Marathon UI
 http://0.0.0.0:31369/email-generator-service/default : Success access via marathon deployment
 
 lsof -n -i4TCP:8080 | grep LISTEN : Get process listening to ports
+
+https://github.com/datastrophic/mesos-docker-containers
+Mesos setup on container
+
+docker-machine create -d virtualbox --virtualbox-memory 4000 --virtualbox-cpu-count 2 microservices
+
+ssh -p 8601 -i /home/bala/Key/OwlerQE.pem  qeuser@52.1.75.146
+Q3uSer0^^l@405
+ssh -p 8601 -i /home/bala/Key/OwlerQE.pem  ec2-user@10.0.0.191
+public ip: 34.195.122.238
+
+
+vi ~/.bash_profile
+export DOCKER_TLS_VERIFY="1"
+export DOCKER_HOST="tcp://192.168.99.100:2376"
+export DOCKER_CERT_PATH="/Users/roshan/.docker/machine/machines/microservices"
+export DOCKER_MACHINE_NAME="microservices"
+
+sudo vi /etc/hosts
+192.168.99.100 mesos-master mesos-slave zookeeper marathon chronos
+
+docker-machine create -d virtualbox --virtualbox-memory 4500 --virtualbox-cpu-count 4 --engine-opt dns=8.8.8.8 microservices
+
+docker network create microservicesnet
+
+java -jar fakeSMTP-2.0.jar -m 
+Port : 9900
+
+-Djava.security.egd=file:/dev/urandom
+
+
+Chronos Command :
+http://chronos:4400/scheduler/iso8601
+{
+  "schedule": "R/2017-09-25T17:22:00Z/PT2M",
+  "name": "dockerjob",
+  "container": {
+    "type": "DOCKER",
+    "image": "libmesos/ubuntu",
+    "network": "BRIDGE",
+    "volumes": [
+      {
+        "containerPath": "/var/log/",
+        "hostPath": "/logs/",
+        "mode": "RW"
+      }
+    ]
+  },
+  "cpus": "0.2",
+  "mem": "512",
+  "fetch": [],
+  "command": "while sleep 10; do date =u %T; done"
+}
