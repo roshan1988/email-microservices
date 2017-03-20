@@ -1,0 +1,36 @@
+{
+  "id": "email-event-checkin-apigateway",
+  "cmd": null,
+  "cpus": 0.2,
+  "mem": 512.0,
+  "disk": 0,
+  "instances": 1,
+  "requirePorts": true,
+  "executor": "",
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "roshan1988/email-event-checkin-apigateway",
+      "forcePullImage": true,
+      "network": "BRIDGE",
+      "forcePullImage": true,
+       "parameters":[
+        {
+            "key": "net",
+            "value": "microservicesnet"
+        }
+      ],
+      "portMappings": [
+        {
+          "containerPort": 9070,
+          "hostPort": 0
+        }
+      ],
+      "privileged": false
+    },
+    "volumes": []
+  },
+  "labels": {
+    "environment": "staging"
+  }
+}
